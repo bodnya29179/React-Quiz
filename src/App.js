@@ -1,8 +1,11 @@
 import { Fragment } from 'react';
+import { Quiz } from './components';
 
 function App() {
   return (
-    <Fragment></Fragment>
+    <Fragment>
+      <Quiz/>
+    </Fragment>
   );
 }
 
