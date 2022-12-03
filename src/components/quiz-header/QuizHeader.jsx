@@ -2,9 +2,11 @@ import React from 'react';
 import Timer from '../timer/Timer';
 
 const QuizHeader = () => {
+  const timeout = () => {};
+
   return (
     <div>
-      <Timer/>
+      <Timer seconds={10} timeoutCallback={timeout}/>
     </div>
   );
 };
