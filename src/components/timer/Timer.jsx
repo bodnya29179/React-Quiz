@@ -1,29 +1,46 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import classes from './Timer.module.scss';
 import { PROGRESS_BAR_COLORS } from '../../constants';
 
-const Timer = ({ seconds, timeoutCallback }) => {
-  const [progressWidth, setProgressWidth] = useState(100);
+const FULL_PROGRESS_WIDTH = 100;
+
+const Timer = ({ seconds, timeoutCallback, shouldRerender }) => {
+  const [progressWidth, setProgressWidth] = useState(FULL_PROGRESS_WIDTH);
   const [progressColor, setProgressColor] = useState(classes[PROGRESS_BAR_COLORS.green]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setProgressWidth((previousWidth) => {
-        const widthPerSecond = previousWidth - (100 / seconds);
+  const timeInterval = useRef(undefined);
+  const timeout = useRef(undefined);
 
-        return widthPerSecond > 0 ? widthPerSecond : 0;
-      });
-    }, 1_000);
+  const updateProgressWidth = () => {
+    setProgressWidth((previousWidth) => {
+      const widthPerSecond = previousWidth - (FULL_PROGRESS_WIDTH / seconds);
 
-    setTimeout(() => {
-      clearInterval(interval);
+      return widthPerSecond > 0 ? widthPerSecond : 0;
+    });
+  };
+
+  const resetTimer = () => {
+    if (timeInterval.current) {
+      clearInterval(timeInterval.current);
+    }
+
+    if (timeout.current) {
+      clearTimeout(timeout.current);
+    }
+
+    setProgressWidth(FULL_PROGRESS_WIDTH);
+  };
+
+  const runTimer = () => {
+    timeInterval.current = setInterval(() => updateProgressWidth(), 1_000);
+
+    timeout.current = setTimeout(() => {
+      resetTimer();
       timeoutCallback();
-    }, seconds * 1_000);
+    }, (seconds + 1) * 1_000);
+  };
 
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
+  const updateProgressColor = () => {
     let color;
 
     switch(true) {
@@ -39,7 +56,14 @@ const Timer = ({ seconds, timeoutCallback }) => {
     }
 
     setProgressColor(classes[color]);
-  }, [progressWidth]);
+  };
+
+  useEffect(() => {
+    resetTimer();
+    runTimer();
+  }, [shouldRerender]);
+
+  useEffect(() => updateProgressColor(), [progressWidth]);
 
   return (
     <div style={{ width: `${progressWidth}%` }} className={`${classes.progressBar} ${progressColor}`}></div>
