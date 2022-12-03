@@ -1,10 +1,10 @@
-import CustomButton from './custom-button/CustomButton';
+import Answer from './answer/Answer';
 import Quiz from './quiz/Quiz';
 import QuizHeader from './quiz-header/QuizHeader';
 import Timer from './timer/Timer';
 
 export {
-  CustomButton,
+  Answer,
   Quiz,
   QuizHeader,
   Timer,
