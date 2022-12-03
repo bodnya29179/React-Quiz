@@ -5,7 +5,7 @@ import QuizHeader from '../quiz-header/QuizHeader';
 const Quiz = () => {
   return (
     <div>
-      <QuizHeader/>
+      <QuizHeader currentQuestion={1} allQuestions={5}/>
     </div>
   );
 };
