@@ -1,5 +1,8 @@
 @import 'src/styles/variables';
 
+$image-horizontal-border: 78px;
+$image-vertical-border: 66px;
+
 .container {
   display: flex;
   justify-content: center;
@@ -8,6 +11,21 @@
   height: 100vh;
 }
 
+.imageContainer {
+  position: relative;
+}
+
+.image {
+  height: 90vh;
+}
+
 .quiz {
-  width: $screen-size-l;
+  position: absolute;
+  top: $image-vertical-border;
+  left: $image-horizontal-border;
+
+  width: calc(100% - $image-horizontal-border * 2);
+  height: calc(100% - $image-vertical-border * 2);
+
+  padding: 30px;
 }
