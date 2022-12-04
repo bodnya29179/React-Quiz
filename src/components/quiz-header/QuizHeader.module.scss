@@ -1,11 +1,14 @@
 @import 'src/styles/variables';
 
 .counter {
+  color: $white;
+  font-size: $font-s;
   text-align: center;
   margin: 20px 0 0;
 }
 
 .numberOfQuestion {
+  font-size: $font-base;
   font-weight: 700;
 }
 

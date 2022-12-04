@@ -3,14 +3,17 @@
 .answer {
   display: flex;
 
-  color: $grey-200;
-  background-color: $grey-100;
+  color: $purple-100;
+  background-color: $white;
   font-size: $font-l;
 
   padding: 10px;
   border-radius: 6px;
-}
+  text-align: left;
 
-.isSelected {
-  background-color: $purple-200;
+  &:hover {
+    color: $white;
+    background-color: $purple-200;
+    transition: 0.3s background-color, 0.3s color;
+  }
 }

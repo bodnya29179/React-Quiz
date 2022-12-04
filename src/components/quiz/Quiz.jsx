@@ -35,11 +35,13 @@ const Quiz = () => {
               timeoutCallback={timeout}
             />
 
-            <QuizBody
-              question={QUIZ[currentQuestionIndex].question}
-              answers={QUIZ[currentQuestionIndex].answers}
-              selectAnswerCallback={selectAnswer}
-            />
+            <div className={classes.quizBody}>
+              <QuizBody
+                question={QUIZ[currentQuestionIndex].question}
+                answers={QUIZ[currentQuestionIndex].answers}
+                selectAnswerCallback={selectAnswer}
+              />
+            </div>
           </Fragment>
         )
       }

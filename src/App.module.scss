@@ -60,7 +60,7 @@ $image-vertical-border: 10.2%;
   right: 30%;
 
   color: $white;
-  font-size: 36px;
+  font-size: $font-xl;
   @extend %glow-animation;
 }
 
