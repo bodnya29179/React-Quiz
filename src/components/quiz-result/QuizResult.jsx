@@ -1,9 +1,9 @@
 import React from 'react';
-import partyingFace from '../../assets/partying-face.svg';
-import cowboyHatFace from '../../assets/cowboy-hat-face.svg';
-import huggingFace from '../../assets/hugging-face.svg';
-import anguishedFace from '../../assets/anguished-face.svg';
-import explodingHead from '../../assets/exploding-head.svg';
+import partyingFace from '../../assets/svg/partying-face.svg';
+import cowboyHatFace from '../../assets/svg/cowboy-hat-face.svg';
+import huggingFace from '../../assets/svg/hugging-face.svg';
+import anguishedFace from '../../assets/svg/anguished-face.svg';
+import explodingHead from '../../assets/svg/exploding-head.svg';
 import classes from './QuizResult.module.scss';
 
 const QuizResult = ({ amountOfCorrectAnswers, allQuestions, takeQuizAgainCallback }) => {

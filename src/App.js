@@ -1,8 +1,8 @@
 import { Fragment, useState } from 'react';
 import { Quiz } from './components';
 import classes from './App.module.scss';
-import ipad from './assets/ipad.svg';
-import button from './assets/button.svg';
+import ipad from './assets/svg/ipad.svg';
+import button from './assets/svg/button.svg';
 import arrow from './assets/arrow.gif';
 import minion from './assets/minion.gif';
 
