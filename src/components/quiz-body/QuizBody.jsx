@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Answer from '../answer/Answer';
 import classes from './QuizBody.module.scss';
 
 const QuizBody = ({ question, answers, selectAnswerCallback }) => {
-  const answerChange = (answer) => {
-    selectAnswerCallback(answer);
-  };
+  const answerChange = (answer) => selectAnswerCallback(answer);
 
   return (
     <div className={classes.container}>
