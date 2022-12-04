@@ -1,7 +1,7 @@
 @import 'src/styles/variables';
 
-$image-horizontal-border: 78px;
-$image-vertical-border: 66px;
+$image-horizontal-border: 9%;
+$image-vertical-border: 10.2%;
 
 .container {
   display: flex;
@@ -9,6 +9,7 @@ $image-vertical-border: 66px;
   align-items: center;
 
   height: 100vh;
+  background: linear-gradient(to bottom, $purple-100, $blue-300);
 }
 
 .imageContainer {
@@ -28,4 +29,5 @@ $image-vertical-border: 66px;
   height: calc(100% - $image-vertical-border * 2);
 
   padding: 30px;
+  background: linear-gradient(to right, $blue-100, $blue-400); // todo: add to colors
 }

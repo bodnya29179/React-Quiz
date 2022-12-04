@@ -9,7 +9,9 @@ const QuizHeader = ({ currentQuestion, allQuestions, timeoutCallback }) => {
 
   return (
     <div>
-      <Timer seconds={10} timeoutCallback={timeoutCallback} shouldRerender={{}}/>
+      <div className={classes.timerContainer}>
+        <Timer seconds={10} timeoutCallback={timeoutCallback} shouldRerender={{}}/>
+      </div>
 
       <h1 className={classes.counter}>
         <span className={classes.numberOfQuestion}>{currentNumber}</span>
