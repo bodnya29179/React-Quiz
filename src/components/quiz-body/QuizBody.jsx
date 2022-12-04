@@ -22,7 +22,6 @@ const QuizBody = ({ question, answers, selectAnswerCallback }) => {
             <Answer
               key={index}
               text={answer.text}
-              isSelected={selectedAnswer === answer.text}
               selectCallback={answerChange.bind(this, answer)}
             />
           ))
