@@ -63,6 +63,10 @@ const Timer = ({ seconds, timeoutCallback, shouldRerender }) => {
     runTimer();
   }, [shouldRerender]);
 
+  useEffect(() => {
+    return () => resetTimer();
+  }, []);
+
   useEffect(() => updateProgressColor(), [progressWidth]);
 
   return (
