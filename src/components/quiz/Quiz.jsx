@@ -3,6 +3,7 @@ import classes from './Quiz.module.scss';
 import QuizHeader from '../quiz-header/QuizHeader';
 import QuizBody from '../quiz-body/QuizBody';
 import { QUIZ } from '../../constants';
+import QuizResult from '../quiz-result/QuizResult';
 
 const Quiz = () => {
   const [totalScore, setTotalScore] = useState(0);
@@ -21,12 +22,10 @@ const Quiz = () => {
   };
 
   return (
-    <div>
+    <div className={classes.container}>
       {
         currentQuestionIndex === QUIZ.length ? (
-          <Fragment>
-            Finished! Your score is {totalScore}/{QUIZ.length}.
-          </Fragment>
+          <QuizResult amountOfCorrectAnswers={totalScore} allQuestions={QUIZ.length}/>
         ) : (
           <Fragment>
             <QuizHeader
