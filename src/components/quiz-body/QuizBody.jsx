@@ -3,10 +3,7 @@ import Answer from '../answer/Answer';
 import classes from './QuizBody.module.scss';
 
 const QuizBody = ({ question, answers, selectAnswerCallback }) => {
-  const [selectedAnswer, setSelectedAnswer] = useState();
-
   const answerChange = (answer) => {
-    setSelectedAnswer(answer);
     selectAnswerCallback(answer);
   };
 
