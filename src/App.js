@@ -3,8 +3,8 @@ import { Quiz } from './components';
 import classes from './App.module.scss';
 import ipad from './assets/svg/ipad.svg';
 import button from './assets/svg/button.svg';
-import arrow from './assets/arrow.gif';
-import minion from './assets/minion.gif';
+import arrow from './assets/gif/arrow.gif';
+import minion from './assets/gif/minion.gif';
 
 function App() {
   const [isGameStarted, setIsGameStarted] = useState(false);
