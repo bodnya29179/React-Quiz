@@ -6,7 +6,7 @@ import anguishedFace from '../../assets/anguished-face.svg';
 import explodingHead from '../../assets/exploding-head.svg';
 import classes from './QuizResult.module.scss';
 
-const QuizResult = ({ amountOfCorrectAnswers, allQuestions }) => {
+const QuizResult = ({ amountOfCorrectAnswers, allQuestions, takeQuizAgainCallback }) => {
   const answersPercentage = Math.floor((amountOfCorrectAnswers * 100) / allQuestions);
 
   const getEmoji = () => {
@@ -29,6 +29,8 @@ const QuizResult = ({ amountOfCorrectAnswers, allQuestions }) => {
       <span className={classes.label}>You answered {answersPercentage}% of the questions on the quiz correctly.</span>
 
       <img className={classes.emoji} src={getEmoji()} alt="Emoji"/>
+
+      <button className={classes.takeAgainBtn} onClick={takeQuizAgainCallback}>Take the quiz again</button>
     </div>
   );
 };

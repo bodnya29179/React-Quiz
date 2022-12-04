@@ -21,11 +21,20 @@ const Quiz = () => {
     nextQuestion();
   };
 
+  const takeQuizAgain = () => {
+    setTotalScore(0);
+    setCurrentQuestionIndex(0);
+  };
+
   return (
     <div className={classes.container}>
       {
         currentQuestionIndex === QUIZ.length ? (
-          <QuizResult amountOfCorrectAnswers={totalScore} allQuestions={QUIZ.length}/>
+          <QuizResult
+            amountOfCorrectAnswers={totalScore}
+            allQuestions={QUIZ.length}
+            takeQuizAgainCallback={takeQuizAgain}
+          />
         ) : (
           <Fragment>
             <QuizHeader
